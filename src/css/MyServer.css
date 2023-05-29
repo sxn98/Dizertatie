@@ -1,0 +1,36 @@
+.PanouServere li{
+
+    
+}
+.Servere{
+    position: relative;
+    display:inline-flex;
+    height: 80px;
+    width: 200px;
+    border-radius: .25rem;
+    background: #21212c !important;
+    border: 0;
+    box-shadow: 0 2px 3px rgba(0,0,0,.25);
+    padding: 10px 8px;
+    margin: 5px;
+    
+}
+
+.Servere img{
+    position: absolute;
+    margin-left: 130px;
+    margin-top: 10px;
+    border-radius: 50%;
+    display: inline;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+}
+
+.Servere p{
+    position: absolute;
+    margin-top: 0px;
+    width: 130px;
+    height: 80px;
+    font-size:large;
+}

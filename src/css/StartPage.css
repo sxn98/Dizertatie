@@ -1,0 +1,44 @@
+.Login {
+    display:block;
+    text-align:center;
+    padding: 10px;
+    margin: auto;
+    width: 250px;
+    height: 500px;
+    padding-top: 300px;
+
+}
+
+.Login button{
+    
+    margin-top: 20px;
+    font-size:large;
+}
+
+.divLogin{
+
+    margin: auto;
+
+}
+.divLogin button{
+    width:250px;
+    text-align: end;
+}
+.divLogin img{
+    margin-top: 22px;
+    margin-left: 10px;
+    position: absolute;
+}
+.divSupport{
+    margin: auto;
+
+}
+.divSupport button{
+    width: 250px;
+    text-align: end;
+}
+.divSupport img{
+    margin-top: 22px;
+    margin-left: 10px;
+    position: absolute;
+}

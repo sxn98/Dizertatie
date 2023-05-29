@@ -1,0 +1,23 @@
+.PrefixChange{
+    
+    display:block;
+    text-align:center;
+    padding: 10px;
+    margin: auto;
+    width: 250px;
+    height: 500px;
+    padding-top: 300px;
+
+}
+.PrefixChange input{
+    
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #3f3f3f;
+    outline: none;
+    background-color: #7b7474;
+    
+}
+.PrefixChange input:focus{
+    outline: 1px solid #fff;
+}
