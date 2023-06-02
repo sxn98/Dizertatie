@@ -4,6 +4,10 @@ import"./css/Documentatie.css"
 import './App.css';
 import './css/PrefixChangePage.css';
 import './css/MyServer.css';
+import './css/GuildSettings.css';
+import './css/WelcomeMessage.css';
+import './css/Log.css';
+import './css/AutoRole.css';
 import {Route, Routes} from "react-router-dom";
 import WithNav from './components/WithNav';
 import WithoutNav from './components/WithoutNav';
@@ -14,12 +18,16 @@ import PrefixChangePage from './routes/PrefixChangePage';
 import GuildContext from "./utils/context/GuildContext";
 import { useState } from "react";
 import GuildSettings from "./routes/GuildSettings";
+import WelcomeMessage from "./routes/WelcomeMessage";
+import Log from "./routes/Log";
+import AutoRole from "./routes/AutoRole";
 
 function App() {
   const[guildID,setGuildID] = useState();
-  const{page,updatePage}=useState();
+
+  //const{page,updatePage}=useState();
   const updateGuildID=(id)=>setGuildID(id);
-  const updatePageName=(name)=>updatePage(name);
+  //const updatePageName=(name)=>updatePage(name);
 
   return (
 
@@ -30,7 +38,7 @@ function App() {
         </Route>
       </Routes>
 
-      <GuildContext.Provider value={{guildID,updateGuildID,page,updatePageName}}>
+      <GuildContext.Provider value={{guildID,updateGuildID/*,page,updatePageName*/}}>
         <Routes>
           <Route element={<WithNav/>}>
             <Route path="/MyServer" element={< MyServer />}/>
@@ -43,6 +51,15 @@ function App() {
           </Route>
           <Route element={<WithNav/>}>
             <Route path="/GuildSettings" element={<GuildSettings/>}/>
+          </Route>
+          <Route element={<WithNav/>}>
+            <Route path="/WelcomeMessage" element={<WelcomeMessage/>}/>
+          </Route>
+          <Route element={<WithNav/>}>
+            <Route path="/Log" element={<Log/>}/>
+          </Route>
+          <Route element={<WithNav/>}>
+            <Route path="/AutoRole" element={<AutoRole/>}/>
           </Route>
         </Routes>
       </GuildContext.Provider>

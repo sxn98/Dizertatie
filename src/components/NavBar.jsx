@@ -10,7 +10,7 @@ function Navbar(){
             <Link to="/" className="titlu"> Disertație</Link>
             <ul>
                 <li>
-                    <CustomLink to="/MyServer">MyServer</CustomLink>
+                    <CustomLink to="/MyServer">My Servers</CustomLink>
                 </li>
                 <li>
                     <CustomLink to="/Documentation">Documentation</CustomLink>

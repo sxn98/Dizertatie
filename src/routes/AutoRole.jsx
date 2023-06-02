@@ -2,10 +2,10 @@ import { useContext } from "react";
 import GuildContext from "../utils/context/GuildContext";
 
 
-const PrefixChangePage=()=>{
+const AutoRole=()=>{
     const{guildID}=useContext(GuildContext) 
     return(
-        <div className="PrefixChange">
+        <div className="AutoRole">
             <label> Current prefix for {guildID}</label>
             <input></input>
             <button className="Butoane">Save new prefix</button>
@@ -13,4 +13,4 @@ const PrefixChangePage=()=>{
         </div>
     )
 }
-export default PrefixChangePage;
+export default AutoRole;

@@ -1,0 +1,22 @@
+.GuildSettings{
+
+    position: relative;
+    display:block;
+    text-align:center;
+    padding: 10px;
+    margin: auto;
+    width:max-content;
+    padding-top: 100px;
+}
+.LabelServer {
+    margin-bottom: 30px;
+}
+.GuildSettings button{
+    width: 170px;
+    margin: 10px;
+    text-align: center;
+
+}
+.AdvancedSettings{
+    margin-top: 30px;
+}

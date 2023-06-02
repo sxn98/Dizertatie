@@ -1,12 +1,11 @@
 .PrefixChange{
-    
+
     display:block;
     text-align:center;
     padding: 10px;
     margin: auto;
     width: 250px;
-    height: 500px;
-    padding-top: 300px;
+    padding-top: 100px;
 
 }
 .PrefixChange input{
@@ -16,8 +15,18 @@
     border: 1px solid #3f3f3f;
     outline: none;
     background-color: #7b7474;
+    width: 100%;
+    padding: 6px 8px;
+    font-size: large;
     
 }
 .PrefixChange input:focus{
     outline: 1px solid #fff;
+}
+.PrefixChange button{
+    margin-top: 10px;
+    margin-left: 125px;
+}
+.PrefixChange label{
+    margin-right: 80px;
 }
