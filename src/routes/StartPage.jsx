@@ -5,7 +5,7 @@ const StartPage=()=>{
     const navigate=useNavigate();
     
     const Logare=()=>{
-        navigate('/Documentation')
+       window.location.href='http://localhost:3001/api/auth/login';
     }
 
 

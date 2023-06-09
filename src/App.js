@@ -21,6 +21,7 @@ import GuildSettings from "./routes/GuildSettings";
 import WelcomeMessage from "./routes/WelcomeMessage";
 import Log from "./routes/Log";
 import AutoRole from "./routes/AutoRole";
+import useGetUser from "./hooks/useGetUser";
 
 function App() {
   const[guildID,setGuildID] = useState();
@@ -28,7 +29,7 @@ function App() {
   //const{page,updatePage}=useState();
   const updateGuildID=(id)=>setGuildID(id);
   //const updatePageName=(name)=>updatePage(name);
-
+  const {user,loading,error}=useGetUser();
   return (
 
     <div className="App">
@@ -39,29 +40,44 @@ function App() {
       </Routes>
 
       <GuildContext.Provider value={{guildID,updateGuildID/*,page,updatePageName*/}}>
-        <Routes>
-          <Route element={<WithNav/>}>
-            <Route path="/MyServer" element={< MyServer />}/>
-          </Route>
-          <Route element={<WithNav/>}>
-            <Route path="/Documentation" element={< Documentation />}/>
-          </Route>
-          <Route element={<WithNav/>}>
-            <Route path="/PrefixChangePage" element={<PrefixChangePage/>}/>
-          </Route>
-          <Route element={<WithNav/>}>
-            <Route path="/GuildSettings" element={<GuildSettings/>}/>
-          </Route>
-          <Route element={<WithNav/>}>
-            <Route path="/WelcomeMessage" element={<WelcomeMessage/>}/>
-          </Route>
-          <Route element={<WithNav/>}>
-            <Route path="/Log" element={<Log/>}/>
-          </Route>
-          <Route element={<WithNav/>}>
-            <Route path="/AutoRole" element={<AutoRole/>}/>
-          </Route>
-        </Routes>
+
+        { user && !error ?(
+          <>
+            <Routes>
+            <Route element={<WithNav/>}>
+              <Route path="/MyServer" element={< MyServer />}/>
+            </Route>
+            <Route element={<WithNav/>}>
+              <Route path="/Documentation" element={< Documentation />}/>
+            </Route>
+            <Route element={<WithNav/>}>
+              <Route path="/PrefixChangePage" element={<PrefixChangePage/>}/>
+            </Route>
+            <Route element={<WithNav/>}>
+              <Route path="/GuildSettings" element={<GuildSettings/>}/>
+            </Route>
+            <Route element={<WithNav/>}>
+              <Route path="/WelcomeMessage" element={<WelcomeMessage/>}/>
+            </Route>
+            <Route element={<WithNav/>}>
+              <Route path="/Log" element={<Log/>}/>
+            </Route>
+            <Route element={<WithNav/>}>
+              <Route path="/AutoRole" element={<AutoRole/>}/>
+            </Route>
+            </Routes>
+          </>
+        ): (  // in mod normal in caz ca nu esti logat (adica cookie-ul este gol) ar fi trebuit sa te dea pe pagina de log in dar nu se intampla asta 
+          <Routes>
+            <Route element={<WithoutNav/>}>
+              <Route path="/" element={< StartPage />}/>
+            </Route>
+          </Routes>
+        )
+
+          
+        }
+        
       </GuildContext.Provider>
     </div>
 
