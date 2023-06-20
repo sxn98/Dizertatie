@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 function useGetUser(){
+    
     const [user,setUser]=useState();
     const[error,setError]=useState();
     const[loading,setLoading]=useState(false); //vom folosi pentru un loading screen   *posibil*
@@ -11,16 +12,19 @@ function useGetUser(){
         axios.get('http://localhost:3001/api/auth/status', {withCredentials:true})
         .then((data)=>{ 
             console.log(data.data)
-            console.log(data.data.DiscordID)
-            console.log(data.data.ID)
             setUser(data.data);
         })
         .catch((e)=> {
             console.log(e.message);
             setError(e.message);
         }).finally(()=> setLoading(false)) //codul de la .finally se executa indiferent daca da eroare sau nu
+        
+
+
+
     },[])
 
+    
     return {user,error,loading}
 }
 
