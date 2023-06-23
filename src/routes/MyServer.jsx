@@ -5,12 +5,13 @@ import testGuild from "../test/test";
 import useGetMutualServers from "../hooks/useGetMutualServers";
 
 const MyServer=()=>{
-    const{updateGuildID}=useContext(GuildContext)
+    const{updateGuild}=useContext(GuildContext)
     const navigate=useNavigate();
     const {servers, loading, error}=useGetMutualServers();
 
-    const handleClick=(guildId)=>{
-        updateGuildID(guildId);
+    const handleClick=(guild)=>{
+        updateGuild(guild);
+
         navigate('/GuildSettings')
     }
 
@@ -25,9 +26,9 @@ const MyServer=()=>{
             ) :(
                 <div className="PanouServere">
                 
-                {servers && servers.mutualGuilds.map((guild)=>(
+                {servers && servers.mutualGuilds.map((guild)=>( // fiecare obiect gasit in api va fi reprezentat ca un server intr-o caseta
                     
-                    <li key={guild.id} className="Servere" onClick={()=>{ handleClick(guild.id) }}>
+                    <li key={guild.id} className="Servere" onClick={()=>{ console.log(guild);handleClick(guild) }}>
                         <p key={guild.name}>{guild.name}</p>
                         <img key={guild.icon} src={`https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png`} alt={guild.name}/>
                     </li>

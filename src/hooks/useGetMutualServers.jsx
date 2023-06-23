@@ -14,7 +14,7 @@ function useGetMutualServers(){
             const result =(async ()=> await axios.get('http://localhost:3001/api/discord/guilds', {withCredentials:true})
             .then(({data})=>{
 
-                console.log(data);
+                //console.log(data);
                 setServers(data);
                
             })
@@ -25,7 +25,7 @@ function useGetMutualServers(){
             .finally(()=> setLoading(false)))
     
             result()
-        },750)
+        },250)
 
     },[])
 

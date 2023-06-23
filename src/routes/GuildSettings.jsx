@@ -1,10 +1,12 @@
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import GuildContext from "../utils/context/GuildContext";
 import { useContext } from "react";
 
 const GuildSettings=()=>{
     const navigate=useNavigate();
-    const{guildID}=useContext(GuildContext)
+    const{guild}=useContext(GuildContext)
+    
+    console.log(guild?.id)
 
     const SchimbarePrefix=()=>{
         navigate('/PrefixChangePage');
@@ -18,11 +20,12 @@ const GuildSettings=()=>{
     const SchimbareAutoRole=()=>{
         navigate('/AutoROle');
     }
-    return(
+    return guild ? ( // pagina se va afisa daca userul chiar a apasat pe o casuta al unui server gasit
 
         <div className="GuildSettings">
             <div>Settings for server</div>
-            <div className="LabelServer"> {guildID} </div>
+            <div className="LabelServer"> {guild?.name} </div>
+            <img className="" key={guild.icon} src={`https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png`} alt={guild.name}/>
             <div className="BasicSettings">
                 <div> Basic Settings</div>
                 <button className="Butoane" onClick={SchimbarePrefix} >Prefix</button>
@@ -36,6 +39,8 @@ const GuildSettings=()=>{
             
 
         </div>
+    ) : (
+        <Navigate replace to="/MyServer" />
     )
 }
 export default GuildSettings;

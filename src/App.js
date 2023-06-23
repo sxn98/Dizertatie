@@ -24,10 +24,10 @@ import AutoRole from "./routes/AutoRole";
 import useGetUser from "./hooks/useGetUser";
 
 function App() {
-  const[guildID,setGuildID] = useState();
+  const[guild,setGuild] = useState();
 
   //const{page,updatePage}=useState();
-  const updateGuildID=(id)=>setGuildID(id);
+  const updateGuild=(guild)=>setGuild(guild);
   //const updatePageName=(name)=>updatePage(name);
   const {user,loading,error}=useGetUser();
   return (
@@ -39,7 +39,7 @@ function App() {
         </Route>
       </Routes> */}
 
-      <GuildContext.Provider value={{guildID,updateGuildID/*,page,updatePageName*/}}>
+      <GuildContext.Provider value={{guild,updateGuild/*,page,updatePageName*/}}>
 
         { user && !error ?(
           <>

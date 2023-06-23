@@ -2,7 +2,14 @@ import { createContext } from "react";
 
 
 const GuildContext=createContext({
-    guildID: '',
+    id:'',
+    name:'',
+    icon:'',
+    owner:Boolean,
+    permissions:'',
+    features: [],
+
+
     updateGuildID:()=>{},
 })
 
