@@ -1,0 +1,93 @@
+.AutoRole{
+
+    display:block;
+    text-align:center;
+    padding: 10px;
+    margin: auto;
+    width: 50%;
+    padding-top: 10px;
+    
+    
+}
+
+.AutoRole button{
+    background: linear-gradient(to bottom right, #EF4765, #ff5a5a);
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+}
+.AutoRole button:not([disabled]):hover {
+    box-shadow: 0 0 .1rem rgba(0, 0, 0, 0.3), -.15rem -.15rem 1rem rgba(239, 71, 101, 0.5), .15rem .15rem 1rem rgba(255, 154, 90, 0.5);
+  }
+.AutoRoleCurrent{
+    margin-bottom: 20px;
+    display: grid;
+    border-style: solid;
+    border-color:white ;
+
+}
+.ColumnName{
+    background-color: #2f3339;
+}
+.AutoRoleCurrent td,th{
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0,0,0, .16), 0 3px 6px rgba(0,0,0, .23);
+    padding: 1em;
+    text-align: center;
+    
+}
+.AutoRoleAdd{
+
+    display:flex;
+    flex-direction: row;
+    text-align: center;
+    margin-top: 20px;
+    
+}
+.AutoRoleAdd select{
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #3f3f3f;
+    outline: none;
+    background-color: #7b7474;
+    width: 40%;
+    padding: 6px 8px;
+    font-size: large;
+
+    
+}
+.AutoRoleAdd input{
+
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #3f3f3f;
+    outline: none;
+    background-color: #7b7474;
+    width: 40%;
+    padding: 6px 8px;
+    font-size:medium;
+    margin-left: 5%;
+    margin-right: 10%;
+
+}
+.DefaultSelection{
+    color: wheat;
+    display:none;
+}
+
+

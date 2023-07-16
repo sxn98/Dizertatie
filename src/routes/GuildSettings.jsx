@@ -18,7 +18,7 @@ const GuildSettings=()=>{
         navigate('/Log');
     }
     const SchimbareAutoRole=()=>{
-        navigate('/AutoROle');
+        navigate('/AutoRole');
     }
     return guild ? ( // pagina se va afisa daca userul chiar a apasat pe o casuta al unui server gasit
 

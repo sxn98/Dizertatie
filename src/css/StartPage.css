@@ -3,15 +3,16 @@
     text-align:center;
     padding: 10px;
     margin: auto;
-    width: 250px;
-    height: 500px;
+    width: auto;
+   
+    height: auto;
     padding-top: 300px;
 
 }
 
 .Login button{
     
-    margin-top: 20px;
+    margin-top:20px;
     font-size:large;
 }
 
@@ -39,6 +40,19 @@
 }
 .divSupport img{
     margin-top: 22px;
+    margin-left: 10px;
+    position: absolute;
+}
+
+.divAdaugare{
+    margin: auto;
+}
+.divAdaugare button{
+    width: 250px;
+    text-align: end;
+}
+.divAdaugare img{
+    margin-top: 23px;
     margin-left: 10px;
     position: absolute;
 }
