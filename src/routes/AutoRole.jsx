@@ -16,9 +16,10 @@ const AutoRole=()=>{
 
     const{roles,loading}=useGetGuildRoles(guild?.id);
     const{autoRole,autoRoleLoading}=useGetAutoRoleConfig(guild?.id)
+    const[rolFals,setRolFals]=useState(false)
     useEffect(()=>{
-
-    },[done])
+        
+    },[done,rolFals])
 
     const DeleteAutoRole=async (aRole)=>{
         // console.log(aRole)
@@ -32,11 +33,12 @@ const AutoRole=()=>{
             console.log(error)
         }
         autoRole.splice(index,1)
-        setDone('Config succesfully deleted')
+        setDone('Config for role with ID '+ aRole.RoleID +' and activity '+aRole.ActivityName+' succesfully deleted')
         setError('')
 
     }
     const Add=async ()=>{
+
         if(!activityName || !selectedRole){
             setError('Please select a role and type an activity name!')
             setDone('')
@@ -57,6 +59,9 @@ const AutoRole=()=>{
             return
         }
 
+        setRolFals(!rolFals)
+
+
          try {
              const res=await updateAutoRole(guild.id,selectedRoleID,activityName)
          } catch (error) {
@@ -64,17 +69,18 @@ const AutoRole=()=>{
          }
 
         const newAutoRole={
-            ID:'',
+            ID:selectedRole+""+activityName,
             GuildID:guild.id,
             RoleID:selectedRoleID,
             ActivityName:activityName
         }
-
+        
         autoRole.push(newAutoRole)
         console.log(autoRole)
 
-        setDone('New Config succesfully added!')
+        setDone('New Config for role '+ selectedRole +' and activity name '+ activityName +' succesfully added!')
         setError('')
+        console.log(done)
         // console.log(roles)
         // console.log("rol selectat: "+selectedRole)
         // console.log("numele activitatii: "+activityName)
@@ -104,7 +110,7 @@ const AutoRole=()=>{
                         <tbody>
                             {autoRole.map((aRole)=>(
                                 <tr key={aRole.ID}>
-                                    <td style={roleStyle(Object.values(roles).find((rolename)=>rolename.id===aRole.RoleID).color)}>{Object.values(roles).find((rolename)=>rolename.id===aRole.RoleID).name}</td> 
+                                    <td style={roleStyle((Object.values(roles).find((rolename)=>rolename.id===aRole.RoleID) || 0).color || 0)}>{(Object.values(roles).find((rolename)=>rolename.id===aRole.RoleID) || 'unavailable role, delete this entry').name || 'unavailable role, delete this entry'}</td> 
                                     <td>{aRole.ActivityName}</td>
                                     <td><button onClick={()=>DeleteAutoRole(aRole)}>delete</button></td>
                                 </tr>

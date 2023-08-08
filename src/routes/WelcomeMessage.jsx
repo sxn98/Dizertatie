@@ -27,7 +27,7 @@ const WelcomeMessage=()=>{
             {channels && config && !loading ?
             <>
             
-                <label> Current welcome channel for server {guild.name}</label>
+                <label> Current welcome channel for server --{guild.name}--</label>
                 <select onChange={(e)=>setSelectedChannel(e.target.value)}>
                     <option className="DefaultSelection">Select a channel</option>
                     {
