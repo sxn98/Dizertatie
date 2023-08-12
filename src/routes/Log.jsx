@@ -6,11 +6,11 @@ import updateLog from "../utils/updateLog";
 
 const Log=()=>{
     const{guild}=useContext(GuildContext) 
-    let {config,channels,loading, selectedChannel,setSelectedChannel,mdc,setMDC,mec,setMEC,nc,setNC,sdem,setSDEM,ufdv,setUFDV,ufmv,setUFMV}=useGetGuildChannelsLog(guild?.id);
+    let {config,channels,loading, selectedChannel,setSelectedChannel,mdc,setMDC,mec,setMEC,nc,setNC,ufdv,setUFDV,ufmv,setUFMV}=useGetGuildChannelsLog(guild?.id);
 
 
     const Update=(e)=>{
-        updateLog(guild.id,selectedChannel,mdc,mec,nc,sdem,ufdv,ufmv)
+        updateLog(guild.id,selectedChannel,mdc,mec,nc,ufdv,ufmv)
     }
     return guild? (
         <div className="Log">
@@ -42,14 +42,6 @@ const Log=()=>{
                 </div>
 
                 <div className="LogPair">
-                    <label className="Text">Self Deleted and Edited Messages</label>
-                    <label className="switch">     
-                        <input type="checkbox" onChange={(e)=>setSDEM(e.target.checked)} checked={sdem}/>
-                        <span className="slider round"></span>
-                    </label>
-                </div>
-
-                <div className="LogPair">
                     <label className="Text">User Forcefully Disconnected From Voice</label>
                     <label className="switch">     
                         <input type="checkbox" onChange={(e)=>setUFDV(e.target.checked)} checked={ufdv}/>
@@ -65,7 +57,7 @@ const Log=()=>{
                     </label>
                 </div>
                 <div className="Channel">
-                    <label> Current welcome channel for server --{guild.name}--</label>
+                    <label> Current log channel for server --{guild.name}--</label>
                     <select onChange={(e)=>setSelectedChannel(e.target.value)}>
                             <option className="DefaultSelection">Select a channel</option>
                             {

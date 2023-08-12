@@ -30,7 +30,7 @@ const PrefixChangePage=()=>{
             {!loading && config ? <>
                 <label> Current prefix for {guild.name}</label>
                 <input value={prefix} onChange={(e)=> setPrefix(e.target.value)}></input>
-                <button className="Butoane" onClick={savePrefix}>Save new prefix</button>
+                <button className="Butoane" onClick={savePrefix}>Save</button>
             </>:(
             <div> Loading </div>
             )}

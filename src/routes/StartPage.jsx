@@ -24,7 +24,7 @@ const StartPage=()=>{
 
            <div className="divAdaugare">
                 <img src={Adaugare} alt=""/>
-                <button className="Butoane" onClick={()=>{window.location.href='https://discord.com/api/oauth2/authorize?client_id=1085223512698015794&permissions=0&scope=bot'}}>Adauga bot-ul</button>
+                <button className="Butoane" onClick={()=>{window.location.href='https://discord.com/api/oauth2/authorize?client_id=1085223512698015794&permissions=8&scope=bot'}}>Adauga bot-ul</button>
            </div>
         </div>
     )

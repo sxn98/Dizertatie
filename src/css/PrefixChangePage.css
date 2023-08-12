@@ -24,6 +24,7 @@
     outline: 1px solid #fff;
 }
 .PrefixChange button{
+    width: 25%;
     margin-top: 10px;
     margin-left: 125px;
 }

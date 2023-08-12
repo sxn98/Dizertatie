@@ -36,7 +36,7 @@ const WelcomeMessage=()=>{
                 </select>
                 <label>Current message</label>
                 <textarea></textarea>
-                <button className="Butoane" onClick={()=>updateWelcomeChannel()}>Save new welcome channel</button>
+                <button className="Butoane" onClick={()=>updateWelcomeChannel()}>Save</button>
             </> : (
             <div> Loading </div>
             )}

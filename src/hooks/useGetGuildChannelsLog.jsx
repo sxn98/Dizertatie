@@ -11,7 +11,6 @@ function useGetGuildChannelsLog(GuildID){
     const[mdc,setMDC]=useState()
     const[mec,setMEC]=useState()
     const[nc,setNC]=useState()
-    const[sdem,setSDEM]=useState()
     const[ufdv,setUFDV]=useState()
     const[ufmv,setUFMV]=useState()
 
@@ -27,7 +26,6 @@ function useGetGuildChannelsLog(GuildID){
             setMDC(data.MsgDeletedContent)
             setMEC(data.MsgEditedContent)
             setNC(data.NicknameChanges)
-            setSDEM(data.SelfDeletedEditedMessage)
             setUFDV(data.UserForcefullyDisconnected)
             setUFMV(data.UserForcefullyMoved)
 
@@ -43,7 +41,7 @@ function useGetGuildChannelsLog(GuildID){
     },[])
 
     
-    return {config,channels,loading,selectedChannel,setSelectedChannel,mdc,setMDC,mec,setMEC,nc,setNC,sdem,setSDEM,ufdv,setUFDV,ufmv,setUFMV}
+    return {config,channels,loading,selectedChannel,setSelectedChannel,mdc,setMDC,mec,setMEC,nc,setNC,ufdv,setUFDV,ufmv,setUFMV}
 }
 
 export default useGetGuildChannelsLog;
