@@ -20,7 +20,7 @@ const MyServer=()=>{
     return(
 
         <div className="MyServer">
-            <div> Your servers with the BOT in them</div>
+            <div> Your servers with the BOT in them (servers in which you do not have administrator privileges will not show!)</div>
 
             {loading ? (<div> Loading </div>
             ) :(

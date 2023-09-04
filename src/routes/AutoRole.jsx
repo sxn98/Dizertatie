@@ -104,7 +104,6 @@ const AutoRole=()=>{
                                 <th>Role</th>
                                 <th>Activity name</th>
                                 <th></th>
-
                             </tr>
                         </thead>
                         <tbody>

@@ -35,6 +35,10 @@ const PrefixChangePage=()=>{
             <div> Loading </div>
             )}
             
+            <div className="circlePrefix" >
+                ?
+                <div className="explanationPrefix">Only moderation commands use this prefix</div>
+            </div>
 
         </div>
     ) : (

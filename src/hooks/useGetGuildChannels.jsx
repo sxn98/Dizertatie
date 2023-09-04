@@ -7,6 +7,7 @@ function useGetGuildChannels(GuildID){
     const[channels,setChannels]=useState();
     const[loading,setLoading]=useState(false); //vom folosi pentru un loading screen   *posibil*
     const[selectedChannel, setSelectedChannel]=useState(false)
+    const[welcomeString,setWelcomeString]=useState()
     useEffect(()=>{
         setLoading(true)
         axios.get(`http://localhost:3001/api/guilds/config/${GuildID}`, {withCredentials:true})
@@ -15,6 +16,7 @@ function useGetGuildChannels(GuildID){
             //console.log(data)
             setConfig(data);
             setSelectedChannel(data.WelcomeChannelID)
+            setWelcomeString(data.WelcomeChannelString)
             return  axios.get(`http://localhost:3001/api/discord/guilds/${GuildID}/channels`, {withCredentials:true})  
 
         })
@@ -27,7 +29,7 @@ function useGetGuildChannels(GuildID){
     },[])
 
     
-    return {config,channels,loading,selectedChannel,setSelectedChannel}
+    return {config,channels,loading,selectedChannel,setSelectedChannel,welcomeString,setWelcomeString}
 }
 
 export default useGetGuildChannels;

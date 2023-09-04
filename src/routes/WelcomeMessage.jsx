@@ -8,13 +8,13 @@ import updateWelcomeChannelID from "../utils/updateGuildWelcomeChannel";
 const WelcomeMessage=()=>{
     const{guild}=useContext(GuildContext) 
     
-    const {config,channels,loading, selectedChannel,setSelectedChannel}=useGetGuildChannels(guild?.id);
+    const {config,channels,loading, selectedChannel,setSelectedChannel,welcomeString,setWelcomeString}=useGetGuildChannels(guild?.id);
      console.log(config)
      console.log(channels);
 
     const updateWelcomeChannel=async () =>{
         try {
-            await updateWelcomeChannelID(guild.id,selectedChannel || '')
+            await updateWelcomeChannelID(guild.id,selectedChannel || '',welcomeString)
             console.log(guild.id)
             console.log(selectedChannel)
         } catch (error) {
@@ -35,8 +35,14 @@ const WelcomeMessage=()=>{
                     }
                 </select>
                 <label>Current message</label>
-                <textarea></textarea>
+                <textarea onChange={(e)=>setWelcomeString(e.target.value)}>{welcomeString}</textarea>
                 <button className="Butoane" onClick={()=>updateWelcomeChannel()}>Save</button>
+
+                <div className="circle" >
+                    ?
+                    <div className="explanation">After the text, the user will be tagged </div>
+                </div>
+                
             </> : (
             <div> Loading </div>
             )}

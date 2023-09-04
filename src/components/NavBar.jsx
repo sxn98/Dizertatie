@@ -7,7 +7,7 @@ function Navbar(){
     return(
 
         <nav className="nav">
-            <Link to="/" className="titlu"> Disertație</Link>
+            <Link to="/" className="titlu"> Secretara</Link>
             <ul>
                 <li>
                     <CustomLink to="/MyServer">My Servers</CustomLink>

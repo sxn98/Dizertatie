@@ -1,5 +1,4 @@
 .WelcomeMessage{
-
     display:block;
     text-align:center;
     padding: 10px;
@@ -44,4 +43,45 @@
 }
 .WelcomeMessage label{
     margin-right: 80px;
+}
+
+  
+.circle {
+    width: 30px;
+    height: 30px;
+    background-color:#414141;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    position:absolute;
+    margin-left: 425px;
+    margin-top: -165px;
+    
+}
+  
+.circle:hover {
+    background-color: green;
+    transform: scale(1.2);
+}
+  
+.explanation {
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    width: 100px;
+    background-color: #323232;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+  
+.circle:hover .explanation {
+    display: block;
+    font-size: 20;
 }

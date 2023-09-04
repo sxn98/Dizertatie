@@ -67,7 +67,10 @@ const Log=()=>{
                     <button className="Butoane" onClick={(e)=>Update(e)}>Save</button>
                 </div>
                 
-                
+                <div className="circleLog" >
+                    ?
+                    <div className="explanationLog">Those two events DO NOT work 100% corectly due to how the audit log is structured in Discord, more info in Documentation</div>
+                </div>
             
             </>: (
                 <div> Loading </div>
