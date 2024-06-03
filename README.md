@@ -1,5 +1,4 @@
-Partea bot-ului din acest program
-Construita cu Javascript si Discord.js
-Contine comenzile bot-ului
+Partea dashboard-ului din acest program<br/>
+Construita cu Javascript si React<br/>
 
-Porniti cu "npm run dev"
+Porniti cu "npm run start"
