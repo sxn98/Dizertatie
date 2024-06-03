@@ -121,7 +121,7 @@ const AutoRole=()=>{
                 <div className="AutoRoleAdd">
                     
                     <select onChange={(e)=>{setSelectedRoleID(e.target.value);setSelectedRole(e.nativeEvent.target[e.nativeEvent.target.selectedIndex].text)}}>
-                        <option className="DefaultSelection">Select a channel</option>
+                        <option className="DefaultSelection">Select a role</option>
                         {
                             roles.map((roles)=> <option key={roles.id} value={roles.id} style={roleStyle(roles.color)}>{roles.name}</option>)
                             
