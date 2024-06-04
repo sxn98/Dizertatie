@@ -25,7 +25,7 @@ function useGetMutualServers(){
             .finally(()=> setLoading(false)))
     
             result()
-        },520)
+        },500)
 
     },[])
 
